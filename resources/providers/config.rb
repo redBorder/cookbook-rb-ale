@@ -30,6 +30,7 @@ action :add do
       group "root"
       mode 0644
       retries 2
+      cookbook "rbale"
       variables(:ale_nodes => ale_nodes)
       notifies :run, 'execute[scan_aps_ale]', :delayed
   end
