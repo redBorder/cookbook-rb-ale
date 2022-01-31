@@ -24,6 +24,13 @@ action :add do
       action :create
     end
 
+    execute "scan_aps_ale" do
+      ignore_failure true
+      command "/bin/rb_scan_ale.rb; exit 0"
+      action :nothing
+      notifies :restart, "service[redborder-ale]", :delayed
+    end
+
     template "/etc/redborder-ale/config.yml" do
       source "rb-ale_config.yml.erb"
       owner "root"
@@ -33,12 +40,6 @@ action :add do
       cookbook "rbale"
       variables(:ale_nodes => ale_nodes)
       notifies :run, 'execute[scan_aps_ale]', :delayed
-  end
-
-  execute "scan_aps_ale" do
-      ignore_failure true
-      command "/bin/rb_scan_ale.rb; exit 0"
-      action :nothing
       notifies :restart, "service[redborder-ale]", :delayed
   end
 
