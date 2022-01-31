@@ -40,7 +40,7 @@ esac
 
 systemctl daemon-reload
 %files
-%defattr(0755,root,root)
+%attr(0755,root,root)
 /var/chef/cookbooks/rb-ale
 %defattr(0644,root,root)
 /var/chef/cookbooks/rb-ale/README.md
