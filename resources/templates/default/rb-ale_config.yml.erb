@@ -1,0 +1,15 @@
+<%  @ale_nodes.each_with_index do |ale_node, i| %>
+<% if ale_node["redBorder"]["parent_id"].nil? %>
+-  ale_sensor:
+     ale_ip: '<%= ale_node[:stream] %>'
+     ale_port: '7779'
+     controller_ip: '<%= ale_node[:controller_ip] %>'
+     ale_api_user: '<%= ale_node[:rest_api_user] %>'
+     ale_api_password: '<%= ale_node[:rest_api_key] %>'
+     topology_uri: '/api/v1/topology'
+     campus_uri: '/api/v1/campus'
+     building_uri: '/api/v1/building'
+     floor_uri: '/api/v1/floor'
+     access_point_uri: '/api/v1/access_point'
+<% end %>
+<% end %>
