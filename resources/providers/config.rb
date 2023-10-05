@@ -7,12 +7,12 @@ action :add do
     config_dir = new_resource.config_dir
     ale_nodes = new_resource.ale_nodes
 
-    yum_package "redborder-ale" do
+    dnf_package "redborder-ale" do
       action :upgrade
       flush_cache[:before]
     end
 
-    yum_package "zeromq-devel" do
+    dnf_package "zeromq-devel" do
       action :upgrade
       flush_cache[:before]
     end
