@@ -1,12 +1,14 @@
 Name:     cookbook-rb-ale
 Version:  %{__version}
 Release:  %{__release}%{?dist}
+BuildArch: noarch
+Summary: ale cookbook to install and configure it in redborder environments
 
 License:  GNU AGPLv3
 URL:  https://github.com/redBorder/cookbook-rb-ale
 Source0: %{name}-%{version}.tar.gz
 
-Summary: ale cookbook to install and configure it in redborder environments
+%global debug_package %{nil}
 
 %description
 %{summary}
@@ -48,5 +50,7 @@ systemctl daemon-reload
 %doc
 
 %changelog
-* Wed Dec 29 2021 Eduardo Reyes <eareyes@redborder.com>- 0.0.1
+* Thu Sep 26 2023 Miguel Negrón <manegron@redborder.com> - 0.0.2
+- Add noarch and debug_package in spec file
+* Wed Dec 29 2021 Eduardo Reyes <eareyes@redborder.com> - 0.0.1
 - first spec version
