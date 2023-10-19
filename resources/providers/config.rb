@@ -26,7 +26,7 @@ action :add do
 
     execute "scan_aps_ale" do
       ignore_failure true
-      command "/bin/rb_scan_ale.rb; exit 0"
+      command "/usr/bin/rb_scan_ale.rb; exit 0"
       action :nothing
       notifies :restart, "service[redborder-ale]", :delayed
     end
