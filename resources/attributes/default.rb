@@ -1,4 +1,4 @@
 #default attributes
 #
 
-default["rb-ale"]["registered"] = false
+default["redborder-ale"]["registered"] = false
