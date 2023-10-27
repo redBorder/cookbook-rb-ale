@@ -7,12 +7,12 @@ action :add do
     config_dir = new_resource.config_dir
     ale_nodes = new_resource.ale_nodes
 
-    yum_package "redborder-ale" do
+    dnf_package "redborder-ale" do
       action :upgrade
       flush_cache[:before]
     end
 
-    yum_package "zeromq-devel" do
+    dnf_package "zeromq-devel" do
       action :upgrade
       flush_cache[:before]
     end
@@ -26,7 +26,7 @@ action :add do
 
     execute "scan_aps_ale" do
       ignore_failure true
-      command "/bin/rb_scan_ale.rb; exit 0"
+      command "rvm ruby-2.7.5@web do /usr/bin/rb_scan_ale.rb; exit 0"
       action :nothing
       notifies :restart, "service[redborder-ale]", :delayed
     end
@@ -85,7 +85,7 @@ action :register do #Usually used to register in consul
         action :nothing
       end.run_action(:run)
 
-      node.set["redborder-ale"]["registered"] = true
+      node.normal["rb-ale"]["registered"] = true
     end
     Chef::Log.info("redborder-ale service has been registered in consul")
   rescue => e
@@ -101,7 +101,7 @@ action :deregister do #Usually used to deregister from consul
         action :nothing
       end.run_action(:run)
 
-      node.set["redborder-ale"]["registered"] = false
+      node.normal["rb-ale"]["registered"] = false
     end
     Chef::Log.info("redborder-ale service has been deregistered from consul")
   rescue => e
