@@ -75,7 +75,7 @@ action :register do
       query['ID'] = "redborder-ale-#{node['hostname']}"
       query['Name'] = 'redborder-ale'
       query['Address'] = "#{node['ipaddress']}"
-      query['Port'] = '7779'
+      query['Port'] = 7779
       json_query = Chef::JSONCompat.to_json(query)
 
       execute 'Register service in consul' do
@@ -83,7 +83,7 @@ action :register do
         action :nothing
       end.run_action(:run)
 
-      node.normal['rb-ale']['registered'] = true
+      node.normal['redborder-ale']['registered'] = true
     end
     Chef::Log.info('redborder-ale service has been registered in consul')
   rescue => e
@@ -99,7 +99,7 @@ action :deregister do
         action :nothing
       end.run_action(:run)
 
-      node.normal['rb-ale']['registered'] = false
+      node.normal['redborder-ale']['registered'] = false
     end
     Chef::Log.info('redborder-ale service has been deregistered from consul')
   rescue => e
