@@ -1,5 +1,5 @@
 <%  @ale_nodes.each_with_index do |ale_node, i| %>
-<% if ale_node["redBorder"]["parent_id"].nil? %>
+<% if ale_node["redborder"]["parent_id"].nil? %>
 -  ale_sensor:
      ale_ip: '<%= ale_node[:stream] %>'
      ale_port: '7779'
