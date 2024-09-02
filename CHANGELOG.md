@@ -1,6 +1,13 @@
 cookbook-rb-ale CHANGELOG
 ===============
 
+## 0.0.6
+
+  - Daniel Castro
+    - [829cea5] redBorder to redborder in rb-ale_config.yml.erb
+  - Luis Blanco
+    - [0f805c9] rename attribute and fix port for consul registration
+
 ## 0.0.5
 
   - Miguel Negron
