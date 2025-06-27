@@ -1,6 +1,11 @@
 cookbook-rb-ale CHANGELOG
 ===============
 
+## 0.0.8
+
+  - nilsver
+    - [10b3062] remove flush cache
+
 ## 0.0.7
 
   - Miguel Negrón
