@@ -8,12 +8,10 @@ action :add do
 
     dnf_package 'redborder-ale' do
       action :upgrade
-      flush_cache[:before]
     end
 
     dnf_package 'zeromq-devel' do
       action :upgrade
-      flush_cache[:before]
     end
 
     directory config_dir do
