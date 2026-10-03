@@ -1,6 +1,11 @@
 cookbook-rb-ale CHANGELOG
 ===============
 
+## 0.0.9
+
+  - manegron
+    - [2be2cf7] Upload cookbook only if opscode-erchef is active
+
 ## 0.0.8
 
   - nilsver
