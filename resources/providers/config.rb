@@ -23,7 +23,7 @@ action :add do
 
     execute 'scan_aps_ale' do
       ignore_failure true
-      command 'rvm ruby-2.7.5@web do /usr/bin/rb_scan_ale.rb; exit 0'
+      command 'rvm ruby-3.4.11@global do /usr/bin/rb_scan_ale.rb; exit 0'
       action :nothing
       notifies :restart, 'service[redborder-ale]', :delayed
     end
