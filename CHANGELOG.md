@@ -1,6 +1,15 @@
 cookbook-rb-ale CHANGELOG
 ===============
 
+## 1.0.0
+
+  - Miguel Negrón
+    - [0fe6ca8] Merge pull request #13 from redBorder/improvement/#26884_remove_ruby_2_7_5
+  - manegron
+    - [0fe6ca8] Merge pull request #13 from redBorder/improvement/#26884_remove_ruby_2_7_5
+    - [bc06df7] Remove ruby-2.7.5
+    - [ecf2295] Remove ruby-2.7.5
+
 ## 0.0.9
 
   - manegron
